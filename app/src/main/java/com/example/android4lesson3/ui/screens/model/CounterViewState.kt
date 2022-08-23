@@ -10,7 +10,7 @@ sealed class ClickEvent {
 
 @Stable
 data class CounterViewState(
-    val firstCount: Int = 0,
-    val secondCount: Int = 0,
-    val thirdCount: Int = 0
+    val firstCount: Int? = 0,
+    val secondCount: Int? = 0,
+    val thirdCount: Int? = 0
 )
