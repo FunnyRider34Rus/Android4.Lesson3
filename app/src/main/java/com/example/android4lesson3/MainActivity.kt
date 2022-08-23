@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -26,9 +27,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun App() {
     val navController = rememberNavController()
+    val viewModel : CounterViewModel = viewModel()
     NavHost(navController = navController, startDestination = NavGraph.Main.name) {
         composable(NavGraph.Main.name) {
-            val viewModel = CounterViewModel()
             MainScreen(viewModel = viewModel) }
     }
 }
